@@ -55,6 +55,7 @@ const getPublishedItems = () => {
 
 const getCategories = () => {
     return new Promise((resolve, reject) => {
+        
         if (categories.length > 0) {
             resolve(categories);
         } else {

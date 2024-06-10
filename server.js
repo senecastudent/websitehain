@@ -41,7 +41,7 @@ app.get('/items', (req, res) => {
 });
 
 app.get('/categories', (req, res) => {
-    res.json(storeService.getCategories());    
+    res.json(storeService.getCategories().then(data => res.json(data)).catch(err => res.status(500).json({ message: err })));    
 });
 
 app.use((req, res) => {
