@@ -43,8 +43,7 @@ app.get('/items', (req, res) => {
 app.get('/categories', (req, res) => {
     storeService.getCategories()
         .then(data => res.json(data))
-        .catch(err => res.status(500).json({ message: err }));
-});
+    });
 
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
